@@ -1,0 +1,29 @@
+/*可以在这里添加你自己的css*/
+
+.heavy {
+    position: relative;
+    display: inline-block;
+}
+
+span.heavy::after {
+    content: ".";
+    position: absolute;
+    left: 0.35em;
+    top: 70%;
+    transform: translate(-50%, 0);
+    height: 4px;
+    line-height: 0px;
+    font-weight: 700;
+}
+
+.table-center {
+    margin: 0 auto;
+}
+
+a {
+   border-bottom: 1px solid #888;
+}
+
+img {
+   max-width: 100%; /*图片自适应宽度*/
+}
