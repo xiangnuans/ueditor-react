@@ -1,7 +1,7 @@
 import { message } from "antd";
 import { uploadImg } from "../../utils/api";
 
-export const registerImg = (UE, width) => {
+export const registerImg = (UE, width, serverUrl) => {
   const MAX_SIZE = 5 * 1024 * 1024;
   const imgWidth = width * (2 / 3);
   UE.ui["diyimg"] = function(editor) {
@@ -36,7 +36,10 @@ export const registerImg = (UE, width) => {
           }
           formData.append("file", data);
           formData.append("type", "image");
-          uploadImg(formData).then((res) => {
+          if (!serverUrl) {
+            message.warning("请配置图片上传服务器地址");
+          }
+          uploadImg(formData, serverUrl).then((res) => {
             if (res.success && res.datas && res.datas.url) {
               let w = res.datas.width;
               if (res.datas.width > imgWidth) {

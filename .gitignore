@@ -8,3 +8,4 @@ examples/dist/
 coverage/
 .idea/
 .project/
+yarn-error.log
