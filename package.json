@@ -28,7 +28,7 @@
     "website:clean": "rimraf examples/dist",
     "website:build": "cross-env NODE_ENV=production webpack"
   },
-  "author": "coco",
+  "author": "1352118502@qq.com",
   "license": "MIT",
   "files": [
     "dist",
@@ -39,8 +39,8 @@
   "keywords": [
     "react",
     "component",
-    "template",
-    "react-component"
+    "ueditor",
+    "ueditor-react"
   ],
   "peerDependencies": {
     "react": "^0.14.9 || ^15.3.0 || ^16.0.0"
