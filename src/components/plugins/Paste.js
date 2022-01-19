@@ -1,9 +1,10 @@
 /**
+ * 重写copy和paste
  * 支持复制从富文本框内复制图片到另一个富文本框
  * 粘贴图片或文本
  */
 import { message } from "antd";
-import { uploadImg } from "../../utils/api";
+import { uploadImg } from "@utils/api";
 
 export const registerPaste = (editor, width, serverUrl) => {
   const MAX_SIZE = 5 * 1024 * 1024;

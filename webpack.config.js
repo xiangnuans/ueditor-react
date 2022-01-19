@@ -27,7 +27,20 @@ if (!isDev) {
 }
 
 module.exports = {
-  entry: path.resolve(__dirname, "examples/src/app.js"),
+  entry: path.resolve(__dirname, "examples/index.jsx"),
+  resolve: {
+    extensions: [
+      ".web.js",
+      ".js",
+      ".jsx",
+      ".less",
+      ".css",
+      ".json",
+      ".scss",
+      ".ts",
+      ".tsx",
+    ], //自动解析的扩展
+  },
   output: {
     path: targetDirectory,
     filename: "[name]-[hash].js",
@@ -43,11 +56,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(jsx|js)?$/i,
         exclude: [/node_modules/],
         use: [
           {
             loader: "babel-loader",
+            options: {
+              cacheDirectory: true,
+              plugins: ["@babel/plugin-transform-runtime"],
+            },
           },
         ],
       },
@@ -88,14 +105,17 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "ueditor-react": path.resolve(__dirname),
+      "@src": path.resolve("src"),
+      "@components": path.resolve("src/components"),
+      "@utils": path.resolve("src/utils"),
+      "@style": path.resolve("src/style"),
     },
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
       inject: true,
-      template: path.resolve(__dirname, "examples/src/index.html"),
+      template: path.resolve(__dirname, "examples/index.html"),
       minify: {
         collapseWhitespace: !isDev,
         removeComments: !isDev,

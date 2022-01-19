@@ -1,6 +1,6 @@
 {
   "name": "ueditor-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于百度富文本的react封装",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -20,7 +20,7 @@
     "lint": "eslint src",
     "precommit": "lint-staged",
     "prebump": "run-s lint test",
-    "release": "standard-version --sign",
+    "release": "standard-version",
     "test": "cross-env BABEL_OUTPUT=commonjs jest",
     "codecov": "codecov",
     "start": "webpack-dev-server --config ./webpack.config.js",
@@ -28,7 +28,7 @@
     "website:clean": "rimraf examples/dist",
     "website:build": "cross-env NODE_ENV=production webpack"
   },
-  "author": "1352118502@qq.com",
+  "author": "guoyanhong@cnstrong.com",
   "license": "MIT",
   "files": [
     "dist",
@@ -51,6 +51,7 @@
     "@babel/plugin-external-helpers": "^7.0.0-beta.40",
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.40",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.40",
+    "@babel/plugin-transform-runtime": "^7.16.8",
     "@babel/preset-env": "^7.0.0-beta.40",
     "@babel/preset-react": "^7.0.0-beta.40",
     "babel-core": "^7.0.0-0",
@@ -93,7 +94,7 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-uglify": "^3.0.0",
-    "standard-version": "^4.2.0",
+    "standard-version": "^9.0.0",
     "style-loader": "^0.20.0",
     "uglifyjs-webpack-plugin": "^1.2.3",
     "webpack": "^4.44.1",

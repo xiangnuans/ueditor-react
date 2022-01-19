@@ -1,5 +1,9 @@
+/**
+ * 上传图片到服务器
+ * 支持jpg|jpeg|png|JPEG|PNG|JPEG格式
+ */
 import { message } from "antd";
-import { uploadImg } from "../../utils/api";
+import { uploadImg } from "@utils/api";
 
 export const registerImg = (UE, width, serverUrl) => {
   const MAX_SIZE = 5 * 1024 * 1024;
